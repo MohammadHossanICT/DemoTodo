@@ -27,9 +27,7 @@ struct ToDoListView: View {
                             ForEach(viewModel.todoLists, id: \.self) { todoList in
                                 NavigationLink(destination: AddToDoView(viewModel: viewModel, isEditable: true, editableToDoItem: todoList)) {
                                     // MARK: - Configure the Todo Cell.
-
-                                    ToDoCellView(toDoList: todoList)
-                                    
+                                    ToDoCellView(toDoList: todoList)  
                                 }
                             }.onDelete { index in
                                 let list  = viewModel.todoLists
