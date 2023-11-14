@@ -30,7 +30,6 @@ struct AddToDoView: View {
                             if let item = editableToDoItem, let itemId = viewModel.todoLists.firstIndex(of: item) {
                                 viewModel.todoLists[itemId] = updateTodoItem
                                 dismiss()
-                                
                             }
                         }
                     }
@@ -69,13 +68,13 @@ struct AddToDoView: View {
                 }
                 
             } .padding(10)
-        } .navigationTitle((isEditable ?? false) ? "Update Todo" : "Add todo")
-        
-            .onAppear {
-                if isEditable ?? false {
-                    isCompleted = editableToDoItem?.completed ?? false
-                }
+        }
+        .navigationTitle((isEditable ?? false) ? "Update Todo" : "Add todo")
+        .onAppear {
+            if isEditable ?? false {
+                isCompleted = editableToDoItem?.completed ?? false
             }
+        }
     }
 }
 

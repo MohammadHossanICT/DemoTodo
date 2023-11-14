@@ -31,7 +31,6 @@ struct ToDoCellView: View {
     }
 }
 
-
 struct ToDoCellView_Previews: PreviewProvider {
     static var previews: some View {
         ToDoCellView(toDoList: ToDoListPreview.previewToDoList)

@@ -85,7 +85,6 @@ struct ToDoListView: View {
             Alert(title: Text("General_Error"), message: Text(viewModel.customError?.localizedDescription ?? ""),dismissButton: .default(Text("Okay")))
         }
     }
-    
 }
 // MARK: - Live Previews .
 struct ToDoListView_Previews: PreviewProvider {
