@@ -28,6 +28,10 @@ One the button is clicked then it will recirect to list view and show the update
 
 <img width="387" alt="Screenshot 2023-11-14 at 15 10 26" src="https://github.com/MohammadHossanICT/DemoTodo/assets/100123501/9866a8b7-15e7-4406-afde-3028105a1769">
 
+Update the values (isCompleted) . The user ID 2 is isCompleted equal to false . Now when the swich button is clicked basically charging the values true. Here is the screenshot.. Please note that this record is already exist into API but we can not modify the new reacord which is added form Add to Do list.
+
+<img width="368" alt="Screenshot 2023-11-14 at 19 07 57" src="https://github.com/MohammadHossanICT/DemoTodo/assets/100123501/0461cda0-d17a-4244-a93b-815e8d812b84">
+
 To Delete the record user need to swip right to left then it will show the delete option then one the delete is click then record will be deleted. Please not that if the new record is  added and try to delete the new record it will return error beacuse it not present into API at that point needs to rerun the app again but the existing record will be updated by clicking the delete button. 
 
 
