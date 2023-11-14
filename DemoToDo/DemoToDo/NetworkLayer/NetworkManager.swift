@@ -32,7 +32,7 @@ extension NetworkManager: Fetchable {
     // MARK: - Todo Put request.
     func put(isCompleted: Bool, id: Int) async throws -> Data {
         do {
-            guard let url =  URL(string: Endpoint.updateToDoUrl + "\(id)") else { return Data()}
+            guard let url = URL(string: Endpoint.updateToDoUrl + "\(id)") else { return Data()}
             var urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = "PUT"
             urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -57,7 +57,7 @@ extension NetworkManager: Fetchable {
     // MARK: - Todo Post request. 
     func post(todo: String, isCompleted: Bool, userID: Int) async throws -> Data {
         do {
-            guard let url =  URL(string: Endpoint.addToDoUrl) else { return Data()}
+            guard let url = URL(string: Endpoint.addToDoUrl) else { return Data()}
             var urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = "POST"
             urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")

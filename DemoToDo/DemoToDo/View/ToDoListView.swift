@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ToDoListView: View {
     
-// MARK: - Using State Object to make sure view model object will not destroed or recreat.
+// MARK: - Using State Object to make sure view model object will not destroed or recreate.
     @StateObject var viewModel: ToDoListViewModel
     
     var body: some View {

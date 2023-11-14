@@ -10,15 +10,15 @@ import Foundation
 
 class FakeToDoCardsRepository: ToDoCardsRepository {
     func addToDoList(todo: String, isCompleted: Bool, userID: Int) async throws -> DemoToDo.Todo {
-        <#code#>
+        return Todo(id: 1, todo: todo, completed: isCompleted, userID: 1)
     }
     
     func updateToDoList(isCompleted: Bool, id: Int) async throws -> DemoToDo.Todo {
-        <#code#>
+        return Todo(id: 1, todo: "test", completed: true, userID: id)
     }
     
     func deleteToDoList(id: Int) async throws -> DemoToDo.Todo {
-        <#code#>
+        return Todo(id: 1, todo: "test", completed: true, userID: id)
     }
     
     func getToDoList(for url: URL) async throws -> DemoToDo.ToDoModel {
@@ -37,4 +37,3 @@ class FakeToDoCardsRepository: ToDoCardsRepository {
         }
     }
 }
-

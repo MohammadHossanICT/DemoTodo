@@ -10,15 +10,15 @@ import Foundation
 
 class FakeNetworkManager: Fetchable {
     func post(todo: String, isCompleted: Bool, userID: Int) async throws -> Data {
-        <#code#>
+        return Data()
     }
     
     func put(isCompleted: Bool, id: Int) async throws -> Data {
-        <#code#>
+        return Data()
     }
     
     func delete(id: Int) async throws -> Data {
-        <#code#>
+        return Data()
     }
     
     func get(url: URL) async throws -> Data {

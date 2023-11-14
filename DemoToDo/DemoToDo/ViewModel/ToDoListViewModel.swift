@@ -47,7 +47,6 @@ extension ToDoListViewModel: ToDoListViewModelAction {
             let todoItem = try await repository.updateToDoList(isCompleted: isCompleted, id: id)
             isErrorOccured = false
            return todoItem
-
         } catch {
             isErrorOccured = true
             customError = error as? NetworkError
@@ -78,11 +77,10 @@ extension ToDoListViewModel: ToDoListViewModelAction {
         }
         do {
             let lists = try await repository.getToDoList(for: url)
-            let arr = lists.todos
+            let todos = lists.todos
             refreshing = false
             isErrorOccured = false
-            todoLists = arr
-
+            todoLists = todos
         } catch {
             refreshing = false
             isErrorOccured = true
@@ -90,5 +88,3 @@ extension ToDoListViewModel: ToDoListViewModelAction {
         }
     }
 }
-
-

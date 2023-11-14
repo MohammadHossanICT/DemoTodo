@@ -8,12 +8,12 @@
 import Foundation
 
 // MARK: - Welcome
-struct ToDoModel: Codable, Hashable {
+struct ToDoModel: Decodable, Hashable {
     let todos: [Todo]
 }
 
 // MARK: - Todo
-struct Todo: Codable, Hashable {
+struct Todo: Decodable, Hashable {
     let id: Int
     let todo: String
     let completed: Bool
