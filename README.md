@@ -8,7 +8,7 @@ Here is the Json link for for encoding and decoding the json form API call.
 
 https://dummyjson.com/todos.
 
-For this I have used the SwiftUI and MVVM architecture pattern to complete the coding challenge. The concurrecy was handle by using Swift async and await which is most recommended was to handle the concurrency.
+For this I have used the SwiftUI and MVVM architecture pattern to complete the coding challenge. The concurrecy was handle by using Swift async and await which is most recommended was to handle the concurrency. The  unit testing part is also written to make sure that the function is returning expected result.
 
 Here is the screenshot when we run the app initially and it displaying the Todo List (GET request)..
 
