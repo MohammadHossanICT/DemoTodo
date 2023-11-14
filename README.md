@@ -13,7 +13,9 @@ For this I have used the SwiftUI and MVVM architecture pattern to complete the c
 Here is the screenshot when we run the app initially and it displaying the Todo List (GET request)..
 ![Simulator Screen Shot - iPhone 14 Pro - 2023-11-14 at 15 02 53](https://github.com/MohammadHossanICT/DemoTodo/assets/100123501/e0ca7eb4-dfcf-47ad-91d3-7d01615f4476)
 
-From the Top Right side I have added the sign to add the recoed into todo list . When user the lick the that plus sign it will redirect to add todo list. Here is the screenshot.
+From the Top Right side I have added the sign to add the recoed into todo list . When user the lick the that plus sign it will redirect to add todo list. 
+
+Here is the screenshot.
 
 <img width="389" alt="Screenshot 2023-11-14 at 15 05 25" src="https://github.com/MohammadHossanICT/DemoTodo/assets/100123501/41092b7a-3555-4c57-8453-7fbefa4710d5">
 
