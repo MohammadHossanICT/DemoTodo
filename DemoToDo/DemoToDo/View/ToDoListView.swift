@@ -9,38 +9,30 @@ import SwiftUI
 
 struct ToDoListView: View {
     
-// MARK: - Using State Object to make sure view model object will not destroed or recreate.
+    // MARK: - Using State Object to make sure view model object will not destroyed or recreate.
     @StateObject var viewModel: ToDoListViewModel
-    
     var body: some View {
         NavigationStack {
             VStack {
-                if viewModel.customError != nil && !viewModel.refreshing {
-                    alertView()
-                } else {
-                    if viewModel.refreshing {
-                        progressView()
-                    }
-                    if viewModel.todoLists.count > 0 && !viewModel.refreshing {
-                        
-                        List {
-                            ForEach(viewModel.todoLists, id: \.self) { todoList in
-                                NavigationLink(destination: AddToDoView(viewModel: viewModel, isEditable: true, editableToDoItem: todoList)) {
-                                    // MARK: - Configure the Todo Cell.
-                                    ToDoCellView(toDoList: todoList)  
-                                }
-                            }.onDelete { index in
-                                let list  = viewModel.todoLists
-                                Task {
-                                    
-                                    let removeItem = try await viewModel.deleteToDoList(id: list[index.first ?? 0].id)
-                                    if let index = viewModel.todoLists.firstIndex(of: removeItem) {
-                                        viewModel.todoLists.remove(at: index)
-                                    }
-                                }
+                switch viewModel.viewState {
+                case .load(todos: let todos):
+                    List {
+                        ForEach(todos, id: \.self) { todoList in
+                            NavigationLink(destination: AddToDoView(viewModel: viewModel, isEditable: true, editableToDoItem: todoList)) {
+                                // MARK: - Configure the Todo Cell.
+                                ToDoCellView(toDoList: todoList)
+                            }
+                        }.onDelete { index in
+                            let list = viewModel.todoLists
+                            Task {
+                                await viewModel.deleteToDoList(id: list[index.first ?? 0].id)
                             }
                         }
                     }
+                case .refresh:
+                    progressView()
+                case .error:
+                    alertView()
                 }
             }
             .navigationTitle(Text("ToDo List"))
@@ -71,7 +63,7 @@ struct ToDoListView: View {
                 .overlay {
                     VStack{
                         ProgressView().padding(50)
-                        Text("Please_Wait_Message").font(.headline)
+                        Text("Please Wait Message").font(.headline)
                     }
                 }
         }
@@ -79,7 +71,7 @@ struct ToDoListView: View {
     
     @ViewBuilder
     func alertView() -> some View {
-        Text("").alert(isPresented: $viewModel.isErrorOccured) {
+        Text("").alert(isPresented: $viewModel.isError) {
             Alert(title: Text("General_Error"), message: Text(viewModel.customError?.localizedDescription ?? ""),dismissButton: .default(Text("Okay")))
         }
     }

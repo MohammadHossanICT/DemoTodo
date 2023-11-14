@@ -80,7 +80,6 @@ final class ToDoListViewModelTest: XCTestCase {
         let error = await toDoListViewModel.customError
         XCTAssertNotNil(error)
         XCTAssertEqual(error, NetworkError.dataNotFound)
-
     }
     
     // when url is not empty but incorrect format
@@ -100,7 +99,6 @@ final class ToDoListViewModelTest: XCTestCase {
         XCTAssertNotNil(error)
         XCTAssertEqual(error, NetworkError.dataNotFound)
     }
-    
     
     func test_addToDo_success() async {
        let note =  try? await toDoListViewModel.addToDoList(todo:"new note", isCompleted: true, userID: 1)

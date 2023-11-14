@@ -25,12 +25,8 @@ struct AddToDoView: View {
                     
                     Button("Update ToDo") {
                         Task {
-                            let updateTodoItem = try await viewModel.updateToDoList(isCompleted: isCompleted, id: editableToDoItem?.id ?? 0)
-                            
-                            if let item = editableToDoItem, let itemId = viewModel.todoLists.firstIndex(of: item) {
-                                viewModel.todoLists[itemId] = updateTodoItem
-                                dismiss()
-                            }
+                            await viewModel.updateToDoList(isCompleted: isCompleted, id: editableToDoItem?.id ?? 0)
+                            dismiss()
                         }
                     }
                     .background(Color(.systemBlue))
@@ -56,8 +52,7 @@ struct AddToDoView: View {
                     
                     Button("Add ToDo") {
                         Task {
-                            let todoItem = try await viewModel.addToDoList(todo: todo, isCompleted: isCompleted, userID: Int(userId) ?? 0)
-                            viewModel.todoLists.insert(contentsOf: [todoItem], at: 0)
+                           await viewModel.addToDoList(todo: todo, isCompleted: isCompleted, userID: Int(userId) ?? 0)
                             dismiss()
                         }
                     }

@@ -8,83 +8,89 @@
 import Foundation
 import Combine
 
+enum ViewState {
+    case load(todos: [Todo])
+    case refresh
+    case error
+}
+
 protocol ToDoListViewModelAction: ObservableObject {
     func getToDoList(urlStr: String) async
-    func addToDoList(todo: String, isCompleted: Bool, userID: Int) async throws -> Todo
-    func updateToDoList(isCompleted: Bool, id: Int) async throws -> Todo
-    func deleteToDoList(id: Int) async throws -> Todo
+    func addToDoList(todo: String, isCompleted: Bool, userID: Int) async
+    func updateToDoList(isCompleted: Bool, id: Int) async
+    func deleteToDoList(id: Int) async
 }
 
 // MARK: - Todo ViewModel Implementation.
 @MainActor
 final class ToDoListViewModel {
-    @Published var todoLists: [Todo] = []
-    @Published private(set) var customError: NetworkError?
-    @Published private(set) var refreshing = true
-    @Published var isErrorOccured = false
-
+    @Published var viewState = ViewState.load(todos: [])
+    var isError = false
+    private(set) var customError: NetworkError?
+    private(set) var todoLists: [Todo] = []
     private let repository: ToDoCardsRepository
+    
     init(repository: ToDoCardsRepository) {
         self.repository = repository
     }
 }
 extension ToDoListViewModel: ToDoListViewModelAction {
-    func deleteToDoList(id: Int) async throws -> Todo {
+    
+    func deleteToDoList(id: Int) async {
         do {
             let todoItem = try await repository.deleteToDoList(id: id)
-            isErrorOccured = false
-           return todoItem
-
+            if let index = todoLists.firstIndex(of: todoItem) {
+                todoLists.remove(at: index)
+            }
+            viewState = .load(todos: todoLists)
+            
         } catch {
-            isErrorOccured = true
+            viewState = .error
+            isError = true
             customError = error as? NetworkError
-            throw error
-        }
-    }
-
-    func updateToDoList(isCompleted: Bool, id: Int) async throws -> Todo {
-        do {
-            let todoItem = try await repository.updateToDoList(isCompleted: isCompleted, id: id)
-            isErrorOccured = false
-           return todoItem
-        } catch {
-            isErrorOccured = true
-            customError = error as? NetworkError
-            throw error
         }
     }
     
-    func addToDoList(todo: String, isCompleted: Bool, userID: Int) async throws -> Todo {
+    func updateToDoList(isCompleted: Bool, id: Int) async {
+        do {
+            let todoItem = try await repository.updateToDoList(isCompleted: isCompleted, id: id)
+            if let itemId = todoLists.firstIndex(of: todoItem) {
+                todoLists[itemId] = todoItem
+            }
+            viewState = .load(todos: todoLists)
+        } catch {
+            viewState = .error
+            isError = true
+            customError = error as? NetworkError
+        }
+    }
+    
+    func addToDoList(todo: String, isCompleted: Bool, userID: Int) async {
         do {
             let todoItem = try await repository.addToDoList(todo: todo, isCompleted: isCompleted, userID: userID)
-            isErrorOccured = false
-           return todoItem
-
+            todoLists.insert(contentsOf: [todoItem], at: 0)
+            viewState = .load(todos: todoLists)
         } catch {
-            isErrorOccured = true
+            viewState = .error
+            isError = true
             customError = error as? NetworkError
-            throw error
         }
     }
     
     func getToDoList(urlStr: String) async {
-        refreshing = true
+        viewState = .refresh
         guard let url = URL(string: urlStr) else {
-        self.customError = NetworkError.invalidURL
-        refreshing = false
-        isErrorOccured = false
-        return
+            self.customError = NetworkError.invalidURL
+            return
         }
         do {
             let lists = try await repository.getToDoList(for: url)
-            let todos = lists.todos
-            refreshing = false
-            isErrorOccured = false
-            todoLists = todos
+            todoLists = lists.todos
+            viewState = .load(todos: todoLists)
         } catch {
-            refreshing = false
-            isErrorOccured = true
             customError = error as? NetworkError
+            isError = true
+            viewState = .error
         }
     }
 }
