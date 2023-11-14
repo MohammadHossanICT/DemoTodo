@@ -28,6 +28,11 @@ One the button is clicked then it will recirect to list view and show the update
 
 <img width="387" alt="Screenshot 2023-11-14 at 15 10 26" src="https://github.com/MohammadHossanICT/DemoTodo/assets/100123501/9866a8b7-15e7-4406-afde-3028105a1769">
 
+To Delete the record user need to swip right to left then it will show the delete option then one the delete is click then record will be deleted. Please not that if the new record is  added and try to delete the new record it will return error beacuse it not present into API but the existing record will be updated by clicking the delete button. 
+
+
+<img width="383" alt="Screenshot 2023-11-14 at 15 13 59" src="https://github.com/MohammadHossanICT/DemoTodo/assets/100123501/7c0fac47-2921-4515-9a4b-c33933040f6c">
+
 
 
 
