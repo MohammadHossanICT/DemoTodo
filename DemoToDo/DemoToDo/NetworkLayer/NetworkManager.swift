@@ -16,6 +16,8 @@ struct NetworkManager {
 }
 
 extension NetworkManager: Fetchable {
+    
+    // MARK: - Todo Delete request.
     func delete(id: Int) async throws -> Data {
         do {
             guard let url =  URL(string: Endpoint.updateToDoUrl + "\(id)") else { return Data()}
@@ -27,7 +29,7 @@ extension NetworkManager: Fetchable {
             throw NetworkError.dataNotFound
         }
     }
-    
+    // MARK: - Todo Put request.
     func put(isCompleted: Bool, id: Int) async throws -> Data {
         do {
             guard let url =  URL(string: Endpoint.updateToDoUrl + "\(id)") else { return Data()}
@@ -43,7 +45,7 @@ extension NetworkManager: Fetchable {
             throw NetworkError.dataNotFound
         }
     }
-    
+    // MARK: - Return Todo Url.
     func get(url: URL) async throws -> Data {
         do {
             let (data, _) = try await urlSession.data(from: url)
@@ -52,7 +54,7 @@ extension NetworkManager: Fetchable {
             throw NetworkError.dataNotFound
         }
     }
-    
+    // MARK: - Todo Post request. 
     func post(todo: String, isCompleted: Bool, userID: Int) async throws -> Data {
         do {
             guard let url =  URL(string: Endpoint.addToDoUrl) else { return Data()}

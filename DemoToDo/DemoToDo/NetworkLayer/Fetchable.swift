@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - Todo Protocol for GET , PUT, POST, DELETE.
+
 protocol Fetchable {
     
     func get(url: URL) async throws -> Data

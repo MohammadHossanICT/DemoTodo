@@ -16,7 +16,6 @@
 		8CCBC2C12B0379C0008A703C /* ToDoListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBC2C02B0379C0008A703C /* ToDoListViewModelTest.swift */; };
 		8CCBC2C52B037DD7008A703C /* AddToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBC2C42B037DD7008A703C /* AddToDoView.swift */; };
 		8CCDD33B2B03040100393787 /* DemoToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDD33A2B03040100393787 /* DemoToDoApp.swift */; };
-		8CCDD33D2B03040100393787 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDD33C2B03040100393787 /* ContentView.swift */; };
 		8CCDD33F2B03040300393787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCDD33E2B03040300393787 /* Assets.xcassets */; };
 		8CCDD3422B03040300393787 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCDD3412B03040300393787 /* Preview Assets.xcassets */; };
 		8CCDD3562B03040300393787 /* DemoToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDD3552B03040300393787 /* DemoToDoUITests.swift */; };
@@ -63,7 +62,6 @@
 		8CCBC2C42B037DD7008A703C /* AddToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoView.swift; sourceTree = "<group>"; };
 		8CCDD3372B03040100393787 /* DemoToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCDD33A2B03040100393787 /* DemoToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoToDoApp.swift; sourceTree = "<group>"; };
-		8CCDD33C2B03040100393787 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8CCDD33E2B03040300393787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CCDD3412B03040300393787 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8CCDD3472B03040300393787 /* DemoToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,7 +164,6 @@
 				8CCDD3692B03047800393787 /* NetworkLayer */,
 				8CCDD3642B03042700393787 /* Model */,
 				8CCDD33A2B03040100393787 /* DemoToDoApp.swift */,
-				8CCDD33C2B03040100393787 /* ContentView.swift */,
 				8CCDD33E2B03040300393787 /* Assets.xcassets */,
 				8CCDD3402B03040300393787 /* Preview Content */,
 			);
@@ -381,7 +378,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CCDD3682B03045800393787 /* ToDoListPreview.swift in Sources */,
-				8CCDD33D2B03040100393787 /* ContentView.swift in Sources */,
 				8CCDD3802B0307CB00393787 /* ToDoCellView.swift in Sources */,
 				8CCDD33B2B03040100393787 /* DemoToDoApp.swift in Sources */,
 				8CCDD37E2B03076700393787 /* Endpoint.swift in Sources */,

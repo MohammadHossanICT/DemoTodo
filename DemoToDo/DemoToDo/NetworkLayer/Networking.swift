@@ -14,10 +14,11 @@ protocol Networking {
 }
 extension Networking {
     
+    // MARK: - Todo url Request.
     func data(from url: URL) async throws -> (Data, URLResponse) {
         try await data(from: url, delegate: nil)
     }
-    
+    // MARK: - Todo URLRequest.
     func data(from url: URLRequest) async throws -> (Data, URLResponse) {
         try await data(for: url, delegate: nil)
     }

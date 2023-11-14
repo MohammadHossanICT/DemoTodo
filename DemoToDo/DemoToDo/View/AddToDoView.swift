@@ -8,25 +8,26 @@
 import SwiftUI
 
 struct AddToDoView: View {
+    // MARK: - Environment(\.dismiss) to redriect one the data is updated.
     @Environment(\.dismiss) var dismiss
     @State var todo: String = ""
     @State var userId: String = ""
     @State var isCompleted: Bool = false
     @StateObject var viewModel: ToDoListViewModel
-    @State var isEditibale: Bool?
-    @State var editiableToDoItem: Todo?
+    @State var isEditable: Bool?
+    @State var editableToDoItem: Todo?
     
     var body: some View {
         NavigationView {
             VStack {
-                if let isEditibale = isEditibale, isEditibale {
+                if let isEditable = isEditable, isEditable {
                     Toggle("Is Completed", isOn: $isCompleted)
                     
                     Button("Update ToDo") {
                         Task {
-                            let updateTodoItem = try await viewModel.updateToDoList(isCompleted: isCompleted, id: editiableToDoItem?.id ?? 0)
+                            let updateTodoItem = try await viewModel.updateToDoList(isCompleted: isCompleted, id: editableToDoItem?.id ?? 0)
                             
-                            if let item = editiableToDoItem, let itemId = viewModel.todoLists.firstIndex(of: item) {
+                            if let item = editableToDoItem, let itemId = viewModel.todoLists.firstIndex(of: item) {
                                 viewModel.todoLists[itemId] = updateTodoItem
                                 dismiss()
                                 
@@ -68,11 +69,11 @@ struct AddToDoView: View {
                 }
                 
             } .padding(10)
-        } .navigationTitle((isEditibale ?? false) ? "Update Todo" : "Add todo")
+        } .navigationTitle((isEditable ?? false) ? "Update Todo" : "Add todo")
         
             .onAppear {
-                if isEditibale ?? false {
-                    isCompleted = editiableToDoItem?.completed ?? false
+                if isEditable ?? false {
+                    isCompleted = editableToDoItem?.completed ?? false
                 }
             }
     }

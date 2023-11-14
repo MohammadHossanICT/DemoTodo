@@ -9,11 +9,13 @@ import Foundation
 @testable import DemoToDo
 
 class NetworkingMock: Networking {
-    func data(for request: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse) {
-        <#code#>
-    }
     
     static var data: Data?
+    
+    
+    func data(for request: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse) {
+       
+    }
 
     func data(from url: URL,
         delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse) {

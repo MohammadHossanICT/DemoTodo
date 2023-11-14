@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ToDoListView: View {
     
+// MARK: - Using State Object to make sure view model object will not destroed or recreat.
     @StateObject var viewModel: ToDoListViewModel
     
     var body: some View {
@@ -24,7 +25,9 @@ struct ToDoListView: View {
                         
                         List {
                             ForEach(viewModel.todoLists, id: \.self) { todoList in
-                                NavigationLink(destination: AddToDoView(viewModel: viewModel, isEditibale: true, editiableToDoItem: todoList)) {
+                                NavigationLink(destination: AddToDoView(viewModel: viewModel, isEditable: true, editableToDoItem: todoList)) {
+                                    // MARK: - Configure the Todo Cell.
+
                                     ToDoCellView(toDoList: todoList)
                                     
                                 }
@@ -55,11 +58,12 @@ struct ToDoListView: View {
             await getDataFromAPI()
         }
     }
-    
+    // MARK: - Making API call call URL .
     func getDataFromAPI() async {
         await viewModel.getToDoList(urlStr: Endpoint.todoUrl)
     }
     
+    // MARK: - Using ViewBuilder to create the child view.
     @ViewBuilder
     func progressView() -> some View {
         VStack{
@@ -83,7 +87,7 @@ struct ToDoListView: View {
     }
     
 }
-
+// MARK: - Live Previews .
 struct ToDoListView_Previews: PreviewProvider {
     static var previews: some View {
         ToDoListView(viewModel: ToDoListViewModel(repository: ToDoRepositoryImplementation(networkManager: NetworkManager())))

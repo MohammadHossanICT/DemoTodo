@@ -12,6 +12,9 @@ enum NetworkError: Error {
     case parsingError
     case dataNotFound
 }
+
+// MARK: - Passing the Custom Error Message.
+
 extension NetworkError: LocalizedError {
     var errorDescription: String? {
         switch self{

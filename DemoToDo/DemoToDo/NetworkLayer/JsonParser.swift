@@ -11,6 +11,7 @@ protocol JsonParser {
     func parse<T: Decodable>(data: Data, type:T.Type)throws -> T
 }
 
+// MARK: - Todo Parsing the json.
 extension JsonParser {
     func parse<T: Decodable>(data: Data, type:T.Type)throws -> T {
         let decoder = JSONDecoder()
