@@ -24,7 +24,7 @@ Here is the screenshot when I added the add the record into todo list.
 
 <img width="396" alt="Screenshot 2023-11-14 at 15 08 19" src="https://github.com/MohammadHossanICT/DemoTodo/assets/100123501/e1743038-3b37-422c-ba46-b5aae9cbaafb">
 
-One the button is clicked then it will recirect to list view and show the update result. Here is the screenshot that record is updated. 
+One the button is clicked then it will redirect  to list view and show the update result. Here is the screenshot that record is updated. 
 
 <img width="387" alt="Screenshot 2023-11-14 at 15 10 26" src="https://github.com/MohammadHossanICT/DemoTodo/assets/100123501/9866a8b7-15e7-4406-afde-3028105a1769">
 
