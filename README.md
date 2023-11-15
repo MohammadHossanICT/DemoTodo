@@ -28,7 +28,11 @@ One the button is clicked then it will recirect to list view and show the update
 
 <img width="387" alt="Screenshot 2023-11-14 at 15 10 26" src="https://github.com/MohammadHossanICT/DemoTodo/assets/100123501/9866a8b7-15e7-4406-afde-3028105a1769">
 
-Update the values (isCompleted) . The user ID 2 is isCompleted equal to false . Now when the swich button is clicked basically charging the values true. Here is the screenshot.. Please note that this record is already exist into API but we can not modify the new reacord which is added form Add to Do list.
+Update the values (isCompleted) . The user ID 2 is isCompleted equal to false . Here is the screenshot to udate task is completed(ID:2).
+
+<img width="401" alt="Screenshot 2023-11-15 at 11 58 38" src="https://github.com/MohammadHossanICT/DemoTodo/assets/100123501/6bf486e0-df77-4083-a283-88b4524ff629">
+
+Now when the swich button is clicked basically charging the values true. Here is the screenshot.. Please note that this record is already exist into API but we can not modify the new reacord which is added form Add to Do list.
 
 <img width="368" alt="Screenshot 2023-11-14 at 19 07 57" src="https://github.com/MohammadHossanICT/DemoTodo/assets/100123501/0461cda0-d17a-4244-a93b-815e8d812b84">
 
