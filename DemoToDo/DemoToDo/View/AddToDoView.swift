@@ -25,6 +25,7 @@ struct AddToDoView: View {
                     
                     Button("Update ToDo") {
                         Task {
+                            viewModel.editibaleToDoItem = editableToDoItem
                             await viewModel.updateToDoList(isCompleted: isCompleted, id: editableToDoItem?.id ?? 0)
                             dismiss()
                         }
@@ -33,6 +34,7 @@ struct AddToDoView: View {
                     .foregroundColor(.white)
                     .frame(width: 150 , height: 40)
                     .cornerRadius(10)
+                    Spacer()
                 } else {
                     HStack {
                         Text("ToDo:")
@@ -60,6 +62,7 @@ struct AddToDoView: View {
                     .foregroundColor(.white)
                     .frame(width: 150 , height: 40)
                     .cornerRadius(10)
+                    Spacer()
                 }
                 
             } .padding(10)

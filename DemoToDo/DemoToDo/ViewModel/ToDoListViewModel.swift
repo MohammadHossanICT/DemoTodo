@@ -26,6 +26,7 @@ protocol ToDoListViewModelAction: ObservableObject {
 final class ToDoListViewModel {
     @Published var viewState = ViewState.load(todos: [])
     var isError = false
+    var editibaleToDoItem: Todo? = nil
     private(set) var customError: NetworkError?
     private(set) var todoLists: [Todo] = []
     private let repository: ToDoCardsRepository
@@ -54,7 +55,8 @@ extension ToDoListViewModel: ToDoListViewModelAction {
     func updateToDoList(isCompleted: Bool, id: Int) async {
         do {
             let todoItem = try await repository.updateToDoList(isCompleted: isCompleted, id: id)
-            if let itemId = todoLists.firstIndex(of: todoItem) {
+            
+            if let editItem = editibaleToDoItem, let itemId = todoLists.firstIndex(of: editItem) {
                 todoLists[itemId] = todoItem
             }
             viewState = .load(todos: todoLists)

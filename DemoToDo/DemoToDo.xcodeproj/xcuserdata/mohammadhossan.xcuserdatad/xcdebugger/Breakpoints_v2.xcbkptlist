@@ -3,4 +3,228 @@
    uuid = "6FB72254-1B00-4085-9CF4-9D091D6E4F08"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5100D794-E7AD-4F82-A86A-A9512C748187"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoToDo/NetworkLayer/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "put(isCompleted:id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5100D794-E7AD-4F82-A86A-A9512C748187 - 3674ecfe8df6a222"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for DemoToDo.NetworkManager.put(isCompleted: Swift.Bool, id: Swift.Int) async throws -&gt; Foundation.Data"
+                  moduleName = "DemoToDo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammadhossan/Desktop/ToDo/DemoToDo/DemoToDo/NetworkLayer/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "5100D794-E7AD-4F82-A86A-A9512C748187 - 3674ecfe8df6a222"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for DemoToDo.NetworkManager.put(isCompleted: Swift.Bool, id: Swift.Int) async throws -&gt; Foundation.Data"
+                  moduleName = "DemoToDo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammadhossan/Desktop/ToDo/DemoToDo/DemoToDo/NetworkLayer/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "778">
+               </Location>
+               <Location
+                  uuid = "5100D794-E7AD-4F82-A86A-A9512C748187 - 3674ecfe8df6a222"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for DemoToDo.NetworkManager.put(isCompleted: Swift.Bool, id: Swift.Int) async throws -&gt; Foundation.Data"
+                  moduleName = "DemoToDo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammadhossan/Desktop/ToDo/DemoToDo/DemoToDo/NetworkLayer/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "2152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "974E8F9B-9DF9-458F-84CE-134198BFA23C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoToDoTests/ViewModelTest/FakeToDoCardsRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "deleteToDoList(id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "11B20881-8580-4541-9923-D1D93E6A89E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoToDoTests/ViewModelTest/ToDoListViewModelTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "test_deleteToDo_Success_Case()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "11B20881-8580-4541-9923-D1D93E6A89E0 - 2fe88c63dd583520"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for DemoToDoTests.ToDoListViewModelTest.test_deleteToDo_Success_Case() async -&gt; ()"
+                  moduleName = "DemoToDoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammadhossan/Desktop/ToDo/DemoToDo/DemoToDoTests/ViewModelTest/ToDoListViewModelTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "1290">
+               </Location>
+               <Location
+                  uuid = "11B20881-8580-4541-9923-D1D93E6A89E0 - 28df822d71013976"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for DemoToDoTests.ToDoListViewModelTest.test_deleteToDo_Success_Case() async -&gt; ()"
+                  moduleName = "DemoToDoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammadhossan/Desktop/ToDo/DemoToDo/DemoToDoTests/ViewModelTest/ToDoListViewModelTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  uuid = "11B20881-8580-4541-9923-D1D93E6A89E0 - 7cc80a5478bff92e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for DemoToDoTests.ToDoListViewModelTest.test_deleteToDo_Success_Case() async -&gt; ()"
+                  moduleName = "DemoToDoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammadhossan/Desktop/ToDo/DemoToDo/DemoToDoTests/ViewModelTest/ToDoListViewModelTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "57">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3ADA9F7B-4B0D-4E87-9DA1-E9D6AB5B8BFD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoToDoTests/ViewModelTest/ToDoListViewModelTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "test_deleteToDo_Success_Case()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F13077BB-F994-4342-99A4-4EBE2F92A326"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoToDo/ViewModel/ToDoListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "deleteToDoList(id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "146869E0-3BA8-400E-AC39-3E88CA592D94"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoToDo/ViewModel/ToDoListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "deleteToDoList(id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "146869E0-3BA8-400E-AC39-3E88CA592D94 - 7998d94377b5c729"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for DemoToDo.ToDoListViewModel.deleteToDoList(id: Swift.Int) async -&gt; ()"
+                  moduleName = "DemoToDo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammadhossan/Desktop/ToDo/DemoToDo/DemoToDo/ViewModel/ToDoListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "146869E0-3BA8-400E-AC39-3E88CA592D94 - 7998d94377b5c729"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for DemoToDo.ToDoListViewModel.deleteToDoList(id: Swift.Int) async -&gt; ()"
+                  moduleName = "DemoToDo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammadhossan/Desktop/ToDo/DemoToDo/DemoToDo/ViewModel/ToDoListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "494">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

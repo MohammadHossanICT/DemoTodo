@@ -14,7 +14,7 @@ class FakeToDoCardsRepository: ToDoCardsRepository {
     }
     
     func updateToDoList(isCompleted: Bool, id: Int) async throws -> DemoToDo.Todo {
-        return Todo(id: 1, todo: "test", completed: true, userID: id)
+        return Todo(id: 1, todo: "test", completed: false, userID: id)
     }
     
     func deleteToDoList(id: Int) async throws -> DemoToDo.Todo {

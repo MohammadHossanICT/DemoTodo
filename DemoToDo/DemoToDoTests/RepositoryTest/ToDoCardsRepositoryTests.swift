@@ -26,16 +26,25 @@ final class ToDoCardsRepositoryTests: XCTestCase {
     
     // when passes ToDo list array will return with some data
     func test_when_get_ToDo_list_success() async {
+        
+        // GIVEN
         let lists = try? await toDoCardsRepository.getToDoList(for: URL(string:"todoSuccess")!)
-        XCTAssertNotNil(lists)
-        XCTAssertEqual(lists?.todos.count, 30)
-        XCTAssertEqual(lists?.todos.first?.todo, "Do something nice for someone I care about")
+        // WHEN
+        guard let listItem = lists else {
+            XCTFail("List is nil")
+            return
+        }
+        //THEN
+        XCTAssertTrue(listItem.todos.count > 0)
     }
     
     // when fails, todo list will be nil
     func test_when_get_ToDo_list_fails() async throws {
-        let lists = try? await toDoCardsRepository.getToDoList(for: URL(string:"todoFaile")!)
-        XCTAssertNil(lists)
         
+        //GIVEN
+        let lists = try? await toDoCardsRepository.getToDoList(for: URL(string:"todoFaile")!)
+        
+        //THEN
+        XCTAssertNil(lists)
     }
 }

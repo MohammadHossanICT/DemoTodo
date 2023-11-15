@@ -100,9 +100,50 @@ final class ToDoListViewModelTest: XCTestCase {
         XCTAssertEqual(error, NetworkError.dataNotFound)
     }
     
-    func test_addToDo_success() async {
-       let note =  try? await toDoListViewModel.addToDoList(todo:"new note", isCompleted: true, userID: 1)
-        XCTAssertNotNil(note)
+  @MainActor func test_addToDo_Success() async {
+        // GIVEN
+        XCTAssertNotNil(toDoListViewModel)
+        await toDoListViewModel.getToDoList(urlStr: "todoSuccess")
+        
+        // WHEN
+        let todoList = toDoListViewModel.todoLists
+        // THEN
+        await toDoListViewModel.addToDoList(todo:"new note", isCompleted: true, userID: 1)
+        XCTAssertTrue(toDoListViewModel.todoLists.count > todoList.count)
     }
+    
+    @MainActor func test_updateToDo_Success_Case() async {
+          // GIVEN
+          XCTAssertNotNil(toDoListViewModel)
+          await toDoListViewModel.getToDoList(urlStr: "todoSuccess")
+          
+          // WHEN
+          let todoList = toDoListViewModel.todoLists
+          XCTAssertNotEqual(todoList.count, 0)
+          let item = todoList.first
+          toDoListViewModel.editibaleToDoItem = item
+          
+          // THEN
+        await toDoListViewModel.updateToDoList(isCompleted: !(item?.completed ?? false), id: item?.id ?? 0)
+        
+        XCTAssertNotEqual(toDoListViewModel.todoLists[0].completed , item?.completed)
+      }
+    
+    @MainActor func test_deleteToDo_Success_Case() async {
+          // GIVEN
+          XCTAssertNotNil(toDoListViewModel)
+          await toDoListViewModel.getToDoList(urlStr: "todoSuccess")
+          
+          // WHEN
+          let todoList = toDoListViewModel.todoLists
+          XCTAssertNotEqual(todoList.count, 0)
+          let item = todoList.first
+          toDoListViewModel.editibaleToDoItem = item
+          
+          // THEN
+         await toDoListViewModel.deleteToDoList(id: item?.id ?? 0)
+         XCTAssertFalse(toDoListViewModel.todoLists.filter ({ $0.todo == "test" }).count > 0)
+    
+      }
 }
 
