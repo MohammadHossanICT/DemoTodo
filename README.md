@@ -18,7 +18,7 @@ From the Top Right side I have added the sign to add the recoed into todo list .
 
 Here is the screenshot.
 
-<img width="389" alt="Screenshot 2023-11-14 at 15 05 25" src="https://github.com/MohammadHossanICT/DemoTodo/assets/100123501/41092b7a-3555-4c57-8453-7fbefa4710d5">
+<img width="391" alt="Screenshot 2023-11-15 at 12 01 44" src="https://github.com/MohammadHossanICT/DemoTodo/assets/100123501/39c299fd-b893-420d-a003-ebefee6cf81a">
 
 Here is the screenshot when I added the add the record into todo list.
 
